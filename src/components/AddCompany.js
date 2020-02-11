@@ -48,8 +48,16 @@ const AddCompany = (props) => {
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        props.addCompany({...details, id: uuid()})
-        setSubmitted(true);
+        const duplicates = props.companies.filter(company => {
+            return company.info.name === details.info.name
+        });
+
+        if (duplicates.length !== 0) {
+            alert('You already have that company!');
+        } else {
+            props.addCompany({...details, id: uuid()})
+            setSubmitted(true);
+        }   
     }
 
     if (isSubmitted) {
