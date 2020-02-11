@@ -14,12 +14,27 @@ const AccordionCards = (props) => {
     return (
         props.companies.map((company, index) => (
             <Card key={company.id}>
-                <Accordion.Toggle
-                    as={Card.Header} variant="link"
-                    eventKey={props.companies.indexOf(company)}
-                    >
-                    {company.info.name}
-                </Accordion.Toggle>
+                <Card.Header>
+                    <Row>
+                        <Accordion.Toggle
+                            as={Button} variant="link"
+                            eventKey={props.companies.indexOf(company)}
+                            >
+                            {company.info.name}
+                        </Accordion.Toggle>
+                            <Link to={"/edit/:"+company.id} style={linkStyle}>
+                                <div className="edit">
+                                    Edit
+                                </div>
+                            </Link>
+                            <Button
+                                onClick={() => props.deleteCompany(index)}
+                                variant="danger"
+                                >
+                                Delete
+                            </Button>
+                    </Row>
+                </Card.Header>
                 <Accordion.Collapse
                     eventKey={props.companies.indexOf(company)}
                     >
@@ -44,19 +59,6 @@ const AccordionCards = (props) => {
                                 <Card.Text>Net Profit/Loss: {company.finances.netProfit}</Card.Text>
                             </Col>
                         </Row>
-                        <Row className="justify-content-center" style={{marginTop: 20}}>
-                            <Link to={"/edit/:"+company.id} style={linkStyle}>
-                                <div className="edit">
-                                    Edit
-                                </div>
-                            </Link>
-                            <Button
-                                onClick={() => props.deleteCompany(index)}
-                                variant="danger"
-                                >
-                                Delete
-                            </Button>
-                        </Row>  
                     </Card.Body>
                 </Accordion.Collapse>
             </Card>
