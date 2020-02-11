@@ -21,35 +21,24 @@ const CompanyTiles = (props) => {
                     <h3 style={{textAlign: "center"}}>You have no companies on file.</h3>
                 </Row>
                 <Row
-                style={{marginTop: 20}}
-                className="justify-content-center">
-                <Col xs={{span: 6}} sm={{span: 4}}>
-                    <div className="new-company">
-                    <Link to="/add" style={linkStyle}>
-                        + Add New Company
-                    </Link>
-                    </div>
-                </Col>
-            </Row>
+                    style={{marginTop: 20}}
+                    className="justify-content-center">
+                    <Col xs={{span: 6}} sm={{span: 4}}>
+                        <Link to="/add" style={linkStyle}>
+                        <div className="new-company">
+                            + Add New Company
+                        </div>
+                        </Link>
+                    </Col>
+                </Row>
             </Jumbotron>
         )
     } else {
         return (
             <Container>
-            <Row
-                style={{marginTop: 20}}
-                className="justify-content-center">
-                <Col xs={{span: 6}} sm={{span: 4}}>
-                    <Link to="/add" style={linkStyle}>
-                        <div className="new-company">
-                            + Add New Company
-                        </div>
-                    </Link>
-                </Col>
-            </Row>
-            <Accordion style={{marginTop: 50}}>
-                <AccordionCards companies={companies}/>
-            </Accordion>
+                <Accordion style={{marginTop: 50}}>
+                    <AccordionCards companies={companies}/>
+                </Accordion>
             </Container>
         );
     }

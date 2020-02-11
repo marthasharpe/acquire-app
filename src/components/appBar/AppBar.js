@@ -11,6 +11,7 @@ const AppBar = () => {
             variant="dark"
             sticky="top"
             className="justify-content-between"
+            expand="sm"
             >
             <Navbar.Brand>
                 <img
@@ -27,20 +28,23 @@ const AppBar = () => {
                     Acquire App
                 </Link>
             </Navbar.Brand>
-                <Nav>
-                    <Link
-                        className="link"
-                        to="/tiles"
-                        >
-                        See Companies
-                    </Link>
-                    <Link
-                        className="link"
-                        to="/add"
-                        >
-                        Add Company
-                    </Link>
-                </Nav>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
+                    <Nav>
+                        <Link
+                            className="link"
+                            to="/tiles"
+                            >
+                            See Companies
+                        </Link>
+                        <Link
+                            className="link"
+                            to="/add"
+                            >
+                            Add Company
+                        </Link>
+                    </Nav>
+                </Navbar.Collapse>
         </Navbar>
     )
 }
