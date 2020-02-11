@@ -32,14 +32,14 @@ const Home = () => {
                 </p>
             </Row>
             <Row style={{marginTop: 20}} className="justify-content-center">
-                <Col xs={{span: 4}} sm={{span: 2}}>
+                <Col xs={{span: 5}} sm={{span: 3}}>
                     <Link to="/add" style={linkStyle}>
                         <div className="link-container">
                             Add New Company
                         </div>
                     </Link>
                 </Col>
-                <Col xs={{span: 4}} sm={{span: 2}}>
+                <Col xs={{span: 5}} sm={{span: 3}}>
                     <Link to="/tiles" style={linkStyle}>
                         <div className="link-container">
                             See Your Companies
